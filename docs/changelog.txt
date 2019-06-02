@@ -3,6 +3,7 @@
 - namespaces (mamba)
 - class autoloading (mamba)
 - GUI update (mamba)
+- image compression (mamba)
 WORK IN PROGRESS
 
 
