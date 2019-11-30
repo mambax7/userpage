@@ -1,6 +1,6 @@
 Credits
 ===============
 
-Originally developed by Hervé Thouzard (http://www.herve-thouzard.com/)
+Originally developed by HervÃ© Thouzard - Instant Zero (http://xoops.instant-zero.com)
 
-Contributors: DefianceB0y, Riosoft, Shine, Gibaphp, Feichtl and Calidro (and all the others) for the quick translations
+Version 2.0 was updated to XOOPS 2.5.10 Standard GUI by Michael Beck (Mamba)

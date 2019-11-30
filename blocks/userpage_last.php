@@ -2,7 +2,7 @@
 /**
  * ****************************************************************************
  * userpage - MODULE FOR XOOPS
- * Copyright (c) Hervé Thouzard (http://www.herve-thouzard.com/)
+ * Copyright (c) HervÃ© Thouzard of Instant Zero (http://www.instant-zero.com)
  *
  * You may not change or alter any portion of this comment or credits
  * of supporting developers from this source code or any supporting source code
@@ -11,68 +11,72 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
- * @copyright       Hervé Thouzard (http://www.herve-thouzard.com/)
+ * @copyright       HervÃ© Thouzard of Instant Zero (http://www.instant-zero.com)
  * @license         http://www.fsf.org/copyleft/gpl.html GNU public license
  * @package         userpage
- * @author 			Hervé Thouzard (http://www.herve-thouzard.com/)
+ * @author          HervÃ© Thouzard of Instant Zero (http://www.instant-zero.com)
  *
- * Version : $Id:
  * ****************************************************************************
  */
-require_once XOOPS_ROOT_PATH.'/modules/userpage/include/common.php';
+require_once XOOPS_ROOT_PATH . '/modules/userpage/include/common.php';
 
 /**
  * Show last pages
+ * @param mixed $options
+ * @return array
  */
-function b_userpage_last_show($options)	// 10=Items count, 30=Title's length
+function b_userpage_last_show($options)    // 10=Items count, 30=Title's length
 {
-	$block = array();
-	$start = 0;
-	$limit = intval($options[0]);
+    $block = [];
+    $start = 0;
+    $limit = (int)$options[0];
 
-	$userpage_handler =& xoops_getmodulehandler('userpage', 'userpage');
-	$criteria = new CriteriaCompo();
-	$criteria->add(new Criteria('1', '1','='));
-	$criteria->setLimit($limit);
-	$criteria->setStart($start);
-	$criteria->setSort('up_created');
-	$criteria->setOrder('DESC');
-	$pages = array();
-	$pages = $userpage_handler->getObjects($criteria);
+    $userpageHandler = \XoopsModules\Userpage\Helper::getInstance()->getHandler('Page');
 
-	foreach($pages as $page) {
-		$page->setVar('dohtml', userpage_utils::getModuleOption('allowhtml'));
-		$data = array();
-		$data = $page->toArray();
-		$data['up_title'] = xoops_substr(strip_tags($page->getVar('up_title')),0,intval($options[1]));
-		$block['pages'][] = $data;
-	}
-	return $block;
+    $criteria = new \CriteriaCompo();
+    $criteria->add(new \Criteria('1', '1', '='));
+    $criteria->setLimit($limit);
+    $criteria->setStart($start);
+    $criteria->setSort('up_created');
+    $criteria->setOrder('DESC');
+    $pages = [];
+    $pages = $userpageHandler->getObjects($criteria);
+
+    foreach ($pages as $page) {
+        $page->setVar('dohtml', Utility::getModuleOption('allowhtml'));
+        $data             = [];
+        $data             = $page->toArray();
+        $data['up_title'] = xoops_substr(strip_tags($page->getVar('up_title')), 0, (int)$options[1]);
+        $block['pages'][] = $data;
+    }
+
+    return $block;
 }
-
 
 /**
  * The edit function
+ * @param mixed $options
+ * @return string
  */
-function b_userpage_last_edit($options)		// 10=Items count, 30=Title's length
+function b_userpage_last_edit($options)        // 10=Items count, 30=Title's length
 {
-	$form= '';
-    $form .= _MB_USERPAGE_ITEMS_COUNT."&nbsp;<input type='text' name='options[]' value='".$options[0]."' />&nbsp;<br />";
-    $form .= _MB_USERPAGE_TITLES_LENGTH."&nbsp;<input type='text' name='options[]' value='".$options[1]."' />&nbsp;";
-	return $form;
-}
+    $form = '';
+    $form .= _MB_USERPAGE_ITEMS_COUNT . "&nbsp;<input type='text' name='options[]' value='" . $options[0] . "'>&nbsp;<br>";
+    $form .= _MB_USERPAGE_TITLES_LENGTH . "&nbsp;<input type='text' name='options[]' value='" . $options[1] . "'>&nbsp;";
 
+    return $form;
+}
 
 /**
-* Block, "on the fly".
-*/
+ * Block, "on the fly".
+ * @param mixed $options
+ */
 function b_userpage_last_onthefly($options)
 {
-	$options = explode('|',$options);
-	$block = & b_userpage_last_show($options);
+    $options = explode('|', $options);
+    $block   = &b_userpage_last_show($options);
 
-	$tpl = new XoopsTpl();
-	$tpl->assign('block', $block);
-	$tpl->display('db:userpage_block_last.html');
+    $tpl = new \XoopsTpl();
+    $tpl->assign('block', $block);
+    $tpl->display('db:userpage_block_last.tpl');
 }
-?>

@@ -2,7 +2,7 @@
 //  ------------------------------------------------------------------------ //
 //                      USERPAGE - MODULE FOR XOOPS 2                        //
 //                  Copyright (c) 2005-2006 Instant Zero                     //
-//                     <http://xoops.instant-zero.com/>                      //
+//                     <http://xoops.instant-zero.com>                      //
 // ------------------------------------------------------------------------- //
 //  This program is free software; you can redistribute it and/or modify     //
 //  it under the terms of the GNU General Public License as published by     //
@@ -24,17 +24,14 @@
 //  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA //
 //  ------------------------------------------------------------------------ //
 
-if (!defined('XOOPS_ROOT_PATH')) {
-	die("XOOPS root path not defined");
-}
+defined('XOOPS_ROOT_PATH') || die('XOOPS root path not defined');
 
-require('japanese.php');
+require 'japanese.php';
 
-$pdf=new PDF_Japanese();
+$pdf = new PDF_Japanese();
 $pdf->AddSJISFont();
 $pdf->Open();
 $pdf->AddPage();
-$pdf->SetFont('SJIS','',18);
-$pdf->Write(8,'9ƒ–ŒŽ‚ÌŒöŠJƒeƒXƒg‚ðŒo‚ÄPHP 3.0‚Í1998”N6ŒŽ‚ÉŒöŽ®‚ÉƒŠƒŠ[ƒX‚³‚ê‚Ü‚µ‚½B');
+$pdf->SetFont('SJIS', '', 18);
+$pdf->Write(8, '9ãƒ¶æœˆã®å…¬é–‹ãƒ†ã‚¹ãƒˆã‚’çµŒã¦PHP 3.0ã¯1998å¹´6æœˆã«å…¬å¼ã«ãƒªãƒªãƒ¼ã‚¹ã•ã‚Œã¾ã—ãŸã€‚');
 $pdf->Output();
-?>

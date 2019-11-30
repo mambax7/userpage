@@ -1,37 +1,39 @@
----------------------------------------
-1.6
----------------------------------------
-- converted to XOOPS 2.5.5 Admin GUI (mamba)
-- added dynamic list of editors
+<h5>2.0 Beta 1   [WORK IN PROGRESS - NOT RELEASED]</h5>  Dev: XOOPS 2.5.10, PHP 7.3.6
+<hr>
+- namespaces (mamba)
+- class autoloading (mamba)
+- GUI update (mamba)
+- image compression (mamba)
+WORK IN PROGRESS
 
----------------------------------------
-1.5
----------------------------------------
+
+<h5>1.5</h5>
+<hr>
 - You can use url rewriting
 - Code refactoring
 - Better support for Xoops 2.3.x
 - The module's templates were modified (pages and blocks)
 - When a page was removed its associated comment were not removed
 - There was some changes in the translations (see lang.diff)
-  
----------------------------------------
-1.21
----------------------------------------
+
+
+<h5>1.21</h5>
+<hr>
 - Corrected a bug in the module's administration
 - Corrected some bug in the xoops_version.php
 - In the module's index page you can now use the folowing Smarty variables (the name should be explicit) :
-	user_avatar, user_name, user_uname, user_email, user_url, user_from, user_sig
+    user_avatar, user_name, user_uname, user_email, user_url, user_from, user_sig
 
 
----------------------------------------
-1.2
----------------------------------------
+
+<h5>1.2</h5>
+<hr>
 - Added the possibility, for the module's administrators, to remove pages (from the user side and from the admin side)
 - I have added a lang.diff file
 
----------------------------------------
-1.1
----------------------------------------
+
+<h5>1.1</h5>
+<hr>
 - Added full support for Xoops 2.0.14 (and up)
 - The module is runing with all the editors you can use in Xoops : Spaw, Fck editor, Htmlarea, Tinyeditor and Kiovi
 - The bug for the comment's title is corrected
