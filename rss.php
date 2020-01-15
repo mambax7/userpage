@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ****************************************************************************
  * userpage - MODULE FOR XOOPS
@@ -30,8 +31,8 @@ if (function_exists('mb_http_output')) {
 }
 $charset = 'utf-8';
 header('Content-Type:text/xml; charset=' . $charset);
-$tpl = new \XoopsTpl();
-$tpl->xoops_setCaching(2);
+$tpl          = new \XoopsTpl();
+$tpl->caching = 2;
 $tpl->xoops_setCacheTime(3600);
 if (!$tpl->is_cached('db:userpage_rss.tpl')) {
     $sitename = htmlspecialchars($xoopsConfig['sitename'], ENT_QUOTES);
@@ -75,13 +76,16 @@ if (!$tpl->is_cached('db:userpage_rss.tpl')) {
     foreach ($pages as $page) {
         $titre       = htmlspecialchars($page->getVar('up_title'), ENT_QUOTES);
         $description = xoops_substr(htmlspecialchars(strip_tags($page->getVar('up_text')), ENT_QUOTES), 0, Utility::getModuleOption('rsslength'));
-        $tpl->append('items', [
-            'title'       => xoops_utf8_encode($titre),
-            'link'        => $page->getURL(),
-            'guid'        => $page->getURL(),
-            'pubdate'     => formatTimestamp($page->getVar('up_created'), 'rss'),
-            'description' => xoops_utf8_encode($description),
-        ]);
+        $tpl->append(
+            'items',
+            [
+                'title'       => xoops_utf8_encode($titre),
+                'link'        => $page->getURL(),
+                'guid'        => $page->getURL(),
+                'pubdate'     => formatTimestamp($page->getVar('up_created'), 'rss'),
+                'description' => xoops_utf8_encode($description),
+            ]
+        );
     }
 }
 $tpl->display('db:userpage_rss.tpl');

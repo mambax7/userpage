@@ -1,4 +1,4 @@
-<h5>2.0 Beta 1   [WORK IN PROGRESS - NOT RELEASED]</h5>  Dev: XOOPS 2.5.10, PHP 7.3.6
+<h5>2.0 Beta 1   [WORK IN PROGRESS - NOT RELEASED]</h5>  Dev: XOOPS 2.5.10, PHP 7.4.1
 <hr>
 - namespaces (mamba)
 - class autoloading (mamba)

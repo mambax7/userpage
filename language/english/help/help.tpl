@@ -3,7 +3,7 @@
 
     <h4 class="odd">DESCRIPTION</h4> <br>
 
-    <p class="even">This module is to create your own page<br> <br>
+    <p class="even">This module is a simple module to allow your Website users to create their own custom User Page.<br> <br>
     </p><br>
     <strong><span style="text-decoration: underline;">What is userpage ?</span></strong><br>
     With userpage, your registred users can create their own page (for example their biography).<br>

@@ -26,7 +26,7 @@
 
 defined('XOOPS_ROOT_PATH') || die('XOOPS root path not defined');
 
-require 'japanese.php';
+require __DIR__ . '/japanese.php';
 
 $pdf = new PDF_Japanese();
 $pdf->AddSJISFont();

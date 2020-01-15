@@ -1,7 +1,7 @@
 ![alt XOOPS CMS](https://xoops.org/images/logoXoops4GithubRepository.png)
 ## Userpage module for  [XOOPS CMS 2.5.9+](https://xoops.org)
 [![XOOPS CMS Module](https://img.shields.io/badge/XOOPS%20CMS-Module-blue.svg)](https://xoops.org)
-[![Software License](https://img.shields.io/badge/license-GPL-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html)
+[![Software License](https://img.shields.io/badge/license-GPL-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html)
 
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/XoopsModules25x/userpage.svg?style=flat)](https://scrutinizer-ci.com/g/XoopsModules25x/userpage/?branch=master)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/95b12220e0ac4056b9af52af708379c9)](https://www.codacy.com/app/XoopsModules25x/userpage)
@@ -10,8 +10,8 @@
 [![Latest Pre-Release](https://img.shields.io/github/tag/XoopsModules25x/userpage.svg?style=flat)](https://github.com/XoopsModules25x/userpage/tags/)
 [![Latest Version](https://img.shields.io/github/release/XoopsModules25x/userpage.svg?style=flat)](https://github.com/XoopsModules25x/userpage/releases/)
 
-**Userpage** for [XOOPS CMS](https://xoops.org) is a module to create your own webpage. 
-With userpage, your registred users can create their own page (for example their biography).
+**Userpage** for [XOOPS CMS](https://xoops.org) is a simple module to allow your Website users to create their own custom User Page. 
+With Userpage, your registered users can create their own page (for example, their biography).
 Once they have created their page, it can be viewed by other users (and it can be commented too)
 
 **Complete features list**
@@ -24,7 +24,6 @@ Once they have created their page, it can be viewed by other users (and it can b
 - Users pages can be commented
 - In the module's options, you can select if you want to activate Html, RSS feeds (and the text's length), you can also select the date's format and you can select to use kiovi.
 
-Visit us on http://xoops.org
 
 **Limitations:**
 For this moment users can only create one page

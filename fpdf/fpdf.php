@@ -1117,7 +1117,7 @@ if (!class_exists('FPDF')) {
                 }
                 $type = mb_strtolower($type);
                 //        $mqr=get_magic_quotes_runtime();
-                //        set_magic_quotes_runtime(0);
+                //        @set_magic_quotes_runtime(0);
                 if ('jpg' === $type || 'jpeg' === $type) {
                     $info = $this->_parsejpg($file);
                 } elseif ('png' === $type) {
@@ -1134,7 +1134,7 @@ if (!class_exists('FPDF')) {
                 if (empty($info)) {
                     return null;
                 }
-                //        set_magic_quotes_runtime($mqr);
+                //        @set_magic_quotes_runtime($mqr);
                 $info['i']           = count($this->images) + 1;
                 $this->images[$file] = $info;
             } else {
@@ -1407,7 +1407,7 @@ if (!class_exists('FPDF')) {
                 $this->_out('endobj');
             }
             //            $mqr=get_magic_quotes_runtime();
-            //            set_magic_quotes_runtime(0);
+            //            @set_magic_quotes_runtime(0);
             foreach ($this->FontFiles as $file => $info) {
                 //Font file embedding
                 $this->_newobj();
@@ -1445,7 +1445,7 @@ if (!class_exists('FPDF')) {
                 $this->_putstream($font);
                 $this->_out('endobj');
             }
-            //            set_magic_quotes_runtime($mqr);
+            //            @set_magic_quotes_runtime($mqr);
             foreach ($this->fonts as $k => $font) {
                 //Font objects
                 $this->fonts[$k]['n'] = $this->n + 1;
@@ -1540,7 +1540,7 @@ if (!class_exists('FPDF')) {
                 }
                 if (isset($info['trns']) && is_array($info['trns'])) {
                     $trns = '';
-                    for ($i = 0; $i < count($info['trns']); ++$i) {
+                    for ($i = 0, $iMax = count($info['trns']); $i < $iMax; ++$i) {
                         $trns .= $info['trns'][$i] . ' ' . $info['trns'][$i] . ' ';
                     }
                     $this->_out('/Mask [' . $trns . ']');

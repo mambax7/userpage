@@ -383,7 +383,7 @@ function CheckTTF($file)
 function MakeFont($fontfile, $afmfile, $enc = 'cp1252', $patch = [], $type = 'TrueType')
 {
     //Generate a font definition file
-    //    set_magic_quotes_runtime(0);
+    //    @set_magic_quotes_runtime(0);
     ini_set('auto_detect_line_endings', '1');
     if ($enc) {
         $map = ReadMap($enc);

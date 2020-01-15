@@ -397,7 +397,7 @@ class CGIFLZW
 
         $iRet = 0;
         for ($i = $this->CurBit, $j = 0; $j < $this->CodeSize; ++$i, ++$j) {
-            $iRet |= (($this->Buf[(int)($i / 8)] & (1 << ($i % 8))) != 0) << $j;
+            $iRet |= (0 != ($this->Buf[(int)($i / 8)] & (1 << ($i % 8)))) << $j;
         }
 
         $this->CurBit += $this->CodeSize;

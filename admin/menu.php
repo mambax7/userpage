@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ****************************************************************************
  * USERPAGE - MODULE FOR XOOPS
@@ -14,6 +15,7 @@ $moduleDirNameUpper = mb_strtoupper($moduleDirName);
 $helper = \XoopsModules\Userpage\Helper::getInstance();
 $helper->loadLanguage('common');
 $helper->loadLanguage('feedback');
+$helper->loadLanguage('modinfo');
 
 $pathIcon32 = \Xmf\Module\Admin::menuIconPath('');
 if (is_object($helper->getModule())) {

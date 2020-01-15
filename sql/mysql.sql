@@ -7,6 +7,6 @@ CREATE TABLE userpage (
   up_hits int(10) unsigned NOT NULL default '0',
   PRIMARY KEY  (up_pageid),
   KEY up_uid (up_uid),
-  KEY up_title (up_title),
+  KEY up_title (up_title(100)),
   KEY up_hits (up_hits)
 ) ENGINE=MyISAM;

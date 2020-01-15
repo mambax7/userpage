@@ -21,7 +21,7 @@
 
 use XoopsModules\Userpage\Utility;
 
-require_once  dirname(dirname(dirname(__DIR__))) . '/include/cp_header.php';
+require_once dirname(dirname(dirname(__DIR__))) . '/include/cp_header.php';
 require_once XOOPS_ROOT_PATH . '/modules/userpage/include/common.php';
 require_once XOOPS_ROOT_PATH . '/modules/userpage/admin/functions.php';
 require_once XOOPS_ROOT_PATH . '/class/pagenav.php';
@@ -46,10 +46,10 @@ switch ($op) {
         xoops_cp_header();
         userpage_adminmenu(0);
 
-    $helper->loadLanguage('admin');
-    $helper->loadLanguage('modinfo');
-    $helper->loadLanguage('common');
-    $helper->loadLanguage('main');
+        $helper->loadLanguage('admin');
+        $helper->loadLanguage('modinfo');
+        $helper->loadLanguage('common');
+        $helper->loadLanguage('main');
 
         $totalcount = $userpageHandler->getCount();    // Pages count
         echo '<h4>' . sprintf(_AM_USERPAGE_STATS, $totalcount) . '</h4>';
@@ -85,7 +85,7 @@ switch ($op) {
             echo '<td align="center">' . formatTimestamp($page->getVar('up_created'), Utility::getModuleOption('dateformat')) . '</td>';
             echo '<td align="center">' . $page->getVar('up_hits') . '</td>';
             $del_action  = "<a title='" . _DELETE . "' href='index.php?op=delete&id=" . $page->getVar('up_pageid') . "' " . Utility::javascriptLinkConfirm(_USERPAGE_ARE_YOU_SURE) . " ><img src='../assets/images/delete.gif' alt='" . _DELETE . "' border='0'></a>";
-            $view_action = "<a target='_blank' title='" . _USERPAGE_VIEW . "' href='" . $page->getURL() . "'><img src='../assets/images/view.gif' alt='" . _USERPAGE_VIEW . "' border='0'></a>";
+            $view_action = "<a target='_blank' title='" . _USERPAGE_VIEW . "' href='" . $page->getURL() . "'><img src='../assets/images/search.gif' alt='" . _USERPAGE_VIEW . "' border='0'></a>";
             echo '<td align="center">' . $del_action . ' ' . $view_action . '</td>';
             echo '</tr>';
         }

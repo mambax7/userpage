@@ -335,8 +335,8 @@ class PDF extends PDF_language
             $iminfo = @getimagesize($url);
             $iw     = $scale * px2mm($iminfo[0]);
             $ih     = $scale * px2mm($iminfo[1]);
-            $iw     = $iw ? $iw : 1;
-            $ih     = $ih ? $ih : 1;
+            $iw     = $iw ?: 1;
+            $ih     = $ih ?: 1;
             $nw     = $iw;
             $nh     = $ih;
             //resizing in x-direction

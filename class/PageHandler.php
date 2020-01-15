@@ -67,8 +67,8 @@ class PageHandler extends \XoopsObjectHandler
     }
 
     /**
-     * @param \XoopsModules\Userpage\XoopsObject $pageObj
-     * @param bool                               $force
+     * @param \XoopsObject $pageObj
+     * @param bool         $force
      * @return bool|int|void
      */
     public function insert(\XoopsObject $pageObj, $force = false)
@@ -116,8 +116,8 @@ class PageHandler extends \XoopsObjectHandler
     /**
      * Remove the specified object
      *
-     * @param XoopsObject $pageObj
-     * @param bool   $force
+     * @param \XoopsObject $pageObj
+     * @param bool         $force
      * @return bool
      */
     public function delete(\XoopsObject $pageObj, $force = false)
@@ -145,8 +145,8 @@ class PageHandler extends \XoopsObjectHandler
     }
 
     /**
-     * @param \XoopsModules\Userpage\CriteriaElement|null $criteria
-     * @param bool                                        $id_as_key
+     * @param \CriteriaElement $criteria
+     * @param bool             $id_as_key
      * @return array
      */
     public function &getObjects(\CriteriaElement $criteria = null, $id_as_key = false)
@@ -154,7 +154,7 @@ class PageHandler extends \XoopsObjectHandler
         $ret   = [];
         $limit = $start = 0;
         $sql   = 'SELECT * FROM ' . $this->db->prefix('userpage');
-        if (isset($criteria) && is_subclass_of($criteria, 'criteriaelement')) {
+        if (isset($criteria) && $criteria instanceof \criteriaelement) {
             $sql .= ' ' . $criteria->renderWhere();
             if ('' != $criteria->getSort()) {
                 $sql .= ' ORDER BY ' . $criteria->getSort() . ' ' . $criteria->getOrder();
@@ -230,7 +230,7 @@ class PageHandler extends \XoopsObjectHandler
     public function getCount($criteria = null)
     {
         $sql = 'SELECT COUNT(*) FROM ' . $this->db->prefix('userpage');
-        if (isset($criteria) && is_subclass_of($criteria, 'criteriaelement')) {
+        if (isset($criteria) && $criteria instanceof \criteriaelement) {
             $sql .= ' ' . $criteria->renderWhere();
         }
         $result = $this->db->query($sql);
@@ -249,7 +249,7 @@ class PageHandler extends \XoopsObjectHandler
     public function deleteAll($criteria = null)
     {
         $sql = 'DELETE FROM ' . $this->db->prefix('userpage');
-        if (isset($criteria) && is_subclass_of($criteria, 'criteriaelement')) {
+        if (isset($criteria) && $criteria instanceof \CriteriaElement) {
             $sql .= ' ' . $criteria->renderWhere();
         }
         if (!$result = $this->db->queryF($sql)) {

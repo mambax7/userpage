@@ -30,7 +30,7 @@ if (!is_object($xoopsUser)) {   // Only for registred users
 }
 */
 $userpageHandler = \XoopsModules\Userpage\Helper::getInstance()->getHandler('Page');
-$uid              = 0;
+$uid             = 0;
 if (is_object($xoopsUser)) {
     $uid = $xoopsUser->getVar('uid');
 }
@@ -53,7 +53,7 @@ if ($cnt > 0) {
 
 $page->setVar('dohtml', Utility::getModuleOption('allowhtml'));
 $myts = \MyTextSanitizer::getInstance();
-echo '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">';
+echo '<!DOCTYPE HTML>';
 echo '<html><head>';
 echo '<meta http-equiv="Content-Type" content="text/html; charset=' . _CHARSET . '">';
 echo '<title>' . _USERPAGE_PAGE_OF . $page->uname() . ' - ' . $myts->htmlSpecialChars(_USERPAGE_PRINTABLE) . ' - ' . $xoopsConfig['sitename'] . '</title>';

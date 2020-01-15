@@ -11,7 +11,7 @@
 
 /**
  * @copyright    XOOPS Project (https://xoops.org)
- * @license      GNU GPL 2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
+ * @license      GNU GPL 2 or later (https://www.gnu.org/licenses/gpl-2.0.html)
  * @package
  * @author       XOOPS Development Team
  */
@@ -51,6 +51,6 @@ $helper->loadLanguage('common');
 
 //Module specific elements
 //require $GLOBALS['xoops']->path("modules/{$moduleDirName}/include/functions.php");
-//require $GLOBALS['xoops']->path("modules/{$moduleDirName}/include/config.php");
+//require $GLOBALS['xoops']->path("modules/{$moduleDirName}/config/config.php");
 
 //xoops_cp_header();

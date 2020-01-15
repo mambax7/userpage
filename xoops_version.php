@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ****************************************************************************
  * userpage - MODULE FOR XOOPS
@@ -38,8 +39,8 @@ $modversion['modicons32']    = 'assets/images/icons/32';
 //about
 $modversion['module_website_url']  = 'www.xoops.org';
 $modversion['module_website_name'] = 'XOOPS';
-$modversion['min_php']             = '5.3.7';
-$modversion['min_xoops']           = '2.5.9';
+$modversion['min_php']             = '5.6';
+$modversion['min_xoops']           = '2.5.10';
 $modversion['min_admin']           = '1.2';
 $modversion['min_db']              = ['mysql' => '5.5'];
 
@@ -186,7 +187,7 @@ $modversion['config'][] = [
     'description' => '_MI_USERPAGE_OPT6_DSC',
     'formtype'    => 'select',
     'valuetype'   => 'text',
-    'default'     => 'dhtml',
+    'default'     => 'dhtmltextarea',
     'options'     => array_flip($editorHandler->getList()),
 ];
 

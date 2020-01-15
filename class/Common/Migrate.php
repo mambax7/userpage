@@ -18,7 +18,7 @@ namespace XoopsModules\Userpage\Common;
  * @category  Migrate
  * @author    Richard Griffith <richard@geekwright.com>
  * @copyright 2016 XOOPS Project (https://xoops.org)
- * @license   GNU GPL 2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
+ * @license   GNU GPL 2 or later (https://www.gnu.org/licenses/gpl-2.0.html)
  * @link      https://xoops.org
  */
 class Migrate extends \Xmf\Database\Migrate
@@ -32,9 +32,12 @@ class Migrate extends \Xmf\Database\Migrate
      */
     public function __construct()
     {
-        require_once dirname(dirname(__DIR__)) . '/include/config.php';
-        $config             = getConfig();
-        $this->renameTables = $config->renameTables;
+        $class = __NAMESPACE__ . '\\' . 'Configurator';
+        if (!class_exists($class)) {
+            throw new \RuntimeException("Class '$class' not found");
+        }
+        $configurator       = new $class;
+        $this->renameTables = $configurator->renameTables;
 
         $moduleDirName = basename(dirname(dirname(__DIR__)));
         parent::__construct($moduleDirName);

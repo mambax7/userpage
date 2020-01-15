@@ -14,12 +14,12 @@ namespace XoopsModules\Userpage;
 
 /**
  * @copyright    XOOPS Project https://xoops.org/
- * @license      GNU GPL 2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
+ * @license      GNU GPL 2 or later (https://www.gnu.org/licenses/gpl-2.0.html)
  * @package
  * @since
  * @author       XOOPS Development Team
  */
-//defined('XOOPS_ROOT_PATH') || die('Restricted access');
+//defined('XOOPS_ROOT_PATH') || exit('Restricted access');
 
 /**
  * Class Helper
@@ -72,7 +72,7 @@ class Helper extends \Xmf\Module\Helper
     {
         $ret = false;
 
-        $class = '\\XoopsModules\\' . ucfirst(mb_strtolower(basename(dirname(__DIR__)))) . '\\' . $name . 'Handler';
+        $class = __NAMESPACE__ . '\\' . ucfirst($name) . 'Handler';
         if (!class_exists($class)) {
             throw new \RuntimeException("Class '$class' not found");
         }

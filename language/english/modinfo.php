@@ -26,7 +26,7 @@
 
 define('_MI_USERPAGE_NAME', 'UserPage');
 define('_MI_USERPAGE_DESC', 'Enable your registred users to create their own page');
-define('_MI_USERPAGE_ADMMENU1', 'Statistics');
+define('_MI_USERPAGE_ADMMENU1', 'Pages List');
 define('_MI_USERPAGE_OPT0', 'Enable html ?');
 define('_MI_USERPAGE_OPT0_DSC', 'Select if users can use html');
 define('_MI_USERPAGE_OPT1', 'Enable RSS Feed ?');
